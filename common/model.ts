@@ -1,6 +1,9 @@
 
 export interface ToDo {
+    id: string;
     title: string;
+    createdOn: Date;
+    doItOn: Date;
     description: string;
     notes: string[];
     status: ToDoStatus;
@@ -9,6 +12,8 @@ export interface ToDo {
     ownerId: string;
 }
 
+// TODO: DoItOnChangeEvent {todo, oldDoItOn, newDoItOn, doItOnChangedOn}
+// TODO: ToDoStatusChangeEvent 
 export interface ToDoCategory {
     categoryName: string;
     parentCategory: ToDoCategory;
