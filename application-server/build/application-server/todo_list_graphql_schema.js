@@ -6,10 +6,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const graphql_tag_1 = __importDefault(require("graphql-tag"));
 exports.schemaItems = graphql_tag_1.default `
 scalar Date
+
 type ToDo {
     id: ID!
     title: String!
     createdOn: Date
+    doItOn: Date
+    description: String
+    notes: [String]
+    status: ToDoStatus
+    categoryId: String
+    ownerId: String
+}
+
+input ToDoInput {
+    title: String!
     doItOn: Date
     description: String
     notes: [String]
@@ -34,6 +45,12 @@ type User {
     passwordHash: String
 }
 
+input UserInput {
+    userIdEmail: String
+    createdOn: Date
+    passwordHash: String
+}
+
 type UserLoginSession {
     userIdEmail: String
     createdOn: Date
@@ -45,6 +62,8 @@ type Query {
 }
 
 type Mutation {
-    createUser(userIdEmail: String!, password: String!): ID
+    createUser(userIdEmail: String!, password: String!): ID!
+
+    createToDo(todo: ToDoInput): ID!
 }
 `;

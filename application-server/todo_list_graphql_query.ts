@@ -2,6 +2,7 @@ import gql from 'graphql-tag';
 import { GraphQLScalarType } from 'graphql';
 import { Kind } from 'graphql/language';
 import { ToDo } from '../common/model';
+import { UserModel } from './todo_list_graphql_dal_model';
 
 export const query = {
     Date: new GraphQLScalarType({
@@ -28,9 +29,35 @@ export const query = {
 
     Mutation: {
         // userIdEmail: String!, password: String!
-        createUser(parent:any, userInfo:any, context:any, info:any) {
+        createUser: async (parent:any, userInfo:any, context: any, info:any) => {
             console.log(userInfo.userIdEmail, userInfo.password);
+            let document = await UserModel.create({ userIdEmail: userInfo.userIdEmail, password: userInfo.password });
+                //.catch(err => {});
+            return document._id;
+            /**/
+        },
+
+        createToDo(parent:any, userInfo:any, context:any, info:any) {
+            // userInfo.id: ID!
+            // userInfo.title: String!
+            // userInfo.createdOn: Date
+            // userInfo.doItOn: Date
+            // userInfo.description: String
+            // userInfo.notes: [String]
+            // userInfo.status: ToDoStatus
+            // userInfo.categoryId: String
+            // userInfo.ownerId: String
+            console.log();
             return "200";
         },
+
+        loginUser: async (parent:any, userInfo:any, context: any, info:any) => {
+            
+        },
+
+        // check that the current session is the users session, then logout the user.
+        logoutUser: async (parent:any, userInfo:any, context: any, info:any) => {
+
+        } 
     }
 }

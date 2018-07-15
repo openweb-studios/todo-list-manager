@@ -38,10 +38,11 @@ class UserAccountEnvironmentContext {
 }
 exports.UserAccountEnvironmentContext = UserAccountEnvironmentContext;
 class UserLoginSession {
-    constructor(userIdEmail, createdOn, passwordHash) {
+    constructor(loginSessionId, userIdEmail, loginActivatedOn, loginDeactivatedOn) {
+        this.loginSessionId = loginSessionId;
         this.userIdEmail = userIdEmail;
-        this.createdOn = createdOn;
-        this.passwordHash = passwordHash;
+        this.loginActivatedOn = loginActivatedOn;
+        this.loginDeactivatedOn = loginDeactivatedOn;
     }
 }
 exports.UserLoginSession = UserLoginSession;

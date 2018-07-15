@@ -60,14 +60,16 @@ export class UserAccountEnvironmentContext {
 }
 
 export class UserLoginSession implements model.UserLoginSession {
+    loginSessionId: string;
     userIdEmail: string;
-    createdOn: Date;
-    passwordHash: string;
+    loginActivatedOn: Date;
+    loginDeactivatedOn: Date;
 
-    constructor(userIdEmail: string, createdOn: Date, passwordHash: string) {
+    constructor(loginSessionId: string, userIdEmail: string, loginActivatedOn: Date, loginDeactivatedOn: Date) {
+        this.loginSessionId = loginSessionId;
         this.userIdEmail = userIdEmail;
-        this.createdOn = createdOn;
-        this.passwordHash = passwordHash;
+        this.loginActivatedOn = loginActivatedOn;
+        this.loginDeactivatedOn = loginDeactivatedOn;
     }
 }
 

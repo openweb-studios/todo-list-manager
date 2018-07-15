@@ -7,3 +7,5 @@ var ToDoStatus;
     ToDoStatus[ToDoStatus["Completed"] = 2] = "Completed";
 })(ToDoStatus = exports.ToDoStatus || (exports.ToDoStatus = {}));
 // status: UserStatus;
+// interface Organization
+// interface Team

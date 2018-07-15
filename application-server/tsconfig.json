@@ -75,8 +75,9 @@
     "files": [
       "main.ts",
       "todo_list_classes.ts",
+      "todo_list_graphql_dal_model.ts",
+      "todo_list_graphql_dal_schema.ts",
       "todo_list_graphql_query.ts",
       "todo_list_graphql_schema.ts"
-
     ]
 }

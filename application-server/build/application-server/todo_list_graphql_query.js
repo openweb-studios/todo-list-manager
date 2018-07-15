@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const graphql_1 = require("graphql");
 const language_1 = require("graphql/language");
+const todo_list_graphql_dal_model_1 = require("./todo_list_graphql_dal_model");
 exports.query = {
     Date: new graphql_1.GraphQLScalarType({
         name: 'Date',
@@ -25,9 +26,25 @@ exports.query = {
     },
     Mutation: {
         // userIdEmail: String!, password: String!
-        createUser(parent, userInfo, context, info) {
+        createUser: async (parent, userInfo, context, info) => {
             console.log(userInfo.userIdEmail, userInfo.password);
-            return "200";
+            let document = await todo_list_graphql_dal_model_1.UserModel.create({ userIdEmail: userInfo.userIdEmail, password: userInfo.password });
+            //.catch(err => {});
+            return document._id;
+            /**/
         },
+        createToDo(parent, userInfo, context, info) {
+            // userInfo.id: ID!
+            // userInfo.title: String!
+            // userInfo.createdOn: Date
+            // userInfo.doItOn: Date
+            // userInfo.description: String
+            // userInfo.notes: [String]
+            // userInfo.status: ToDoStatus
+            // userInfo.categoryId: String
+            // userInfo.ownerId: String
+            console.log();
+            return "200";
+        }
     }
 };
