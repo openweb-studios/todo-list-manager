@@ -19,5 +19,4 @@ export var userSchema: Schema = new Schema({
     passwordHash: String,
 }, { timestamps: { createdAt: 'createdOn' } });
 
-var UserModel = model("User", userSchema);
 

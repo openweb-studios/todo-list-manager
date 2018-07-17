@@ -31,7 +31,9 @@ export enum ToDoStatus {
  * not want to have performance indicators or "todo-guidance" for things like cleaning
  * the house)
  */
-export interface ToDoContext {}
+export interface ToDoContext {
+    
+}
 
 // ToDoCompletionEvent
 export interface User {

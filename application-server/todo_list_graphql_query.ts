@@ -52,7 +52,12 @@ export const query = {
         },
 
         loginUser: async (parent:any, userInfo:any, context: any, info:any) => {
-            
+            // loginUser(userIdEmail: String!, password: String!): Boolean
+            UserModel.findOne({'userIdEmail': userInfo.userIdEmail}, (err, user) => {
+                if (user) {
+                    UserModel.
+                }
+            });
         },
 
         // check that the current session is the users session, then logout the user.
