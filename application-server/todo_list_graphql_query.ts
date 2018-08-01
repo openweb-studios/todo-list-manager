@@ -55,7 +55,7 @@ export const query = {
             // loginUser(userIdEmail: String!, password: String!): Boolean
             UserModel.findOne({'userIdEmail': userInfo.userIdEmail}, (err, user) => {
                 if (user) {
-                    UserModel.
+                    UserModel.checkSuppliedPassword(userInfo.userIdemail, userInfo.password);
                 }
             });
         },

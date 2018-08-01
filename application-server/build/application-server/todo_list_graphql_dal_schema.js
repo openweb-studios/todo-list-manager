@@ -15,4 +15,3 @@ exports.userSchema = new mongoose_1.Schema({
     createdOn: Date,
     passwordHash: String,
 }, { timestamps: { createdAt: 'createdOn' } });
-var UserModel = mongoose_1.model("User", exports.userSchema);

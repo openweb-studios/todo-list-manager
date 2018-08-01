@@ -1,0 +1,25 @@
+{
+  "name": "todo-list-manager-ngui",
+  "version": "1.0.0",
+  "description": "Angular 6.0 Web UI for ToDo List Manager",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openweb-studios/todo-list-manager.git"
+  },
+  "keywords": [
+    "todo-management",
+    "task-management",
+    "semantic-knowledge-representation"
+  ],
+  "author": "Brian Abbott",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/openweb-studios/todo-list-manager/issues"
+  },
+  "homepage": "https://github.com/openweb-studios/todo-list-manager#readme",
+  "dependencies": {}
+}

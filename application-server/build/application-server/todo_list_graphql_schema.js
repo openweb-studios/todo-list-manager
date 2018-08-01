@@ -65,5 +65,7 @@ type Mutation {
     createUser(userIdEmail: String!, password: String!): ID!
 
     createToDo(todo: ToDoInput): ID!
+
+    loginUser(userIdEmail: String!, password: String!): Boolean
 }
 `;

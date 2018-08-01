@@ -45,6 +45,17 @@ exports.query = {
             // userInfo.ownerId: String
             console.log();
             return "200";
+        },
+        loginUser: async (parent, userInfo, context, info) => {
+            // loginUser(userIdEmail: String!, password: String!): Boolean
+            todo_list_graphql_dal_model_1.UserModel.findOne({ 'userIdEmail': userInfo.userIdEmail }, (err, user) => {
+                if (user) {
+                    todo_list_graphql_dal_model_1.UserModel.checkSuppliedPassword(userInfo.userIdemail, userInfo.password);
+                }
+            });
+        },
+        // check that the current session is the users session, then logout the user.
+        logoutUser: async (parent, userInfo, context, info) => {
         }
     }
 };
